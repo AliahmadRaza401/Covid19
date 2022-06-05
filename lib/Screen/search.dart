@@ -68,7 +68,8 @@ class _SearchPageState extends State<SearchPage> {
                     decoration: myinputDecoration(),
                   ),
                 ),
-                searchController.text.isEmpty
+                                searchController.text.isEmpty
+
                     ? Container(
                                   height: AppSizes.dynamicHeight(context, 0.8),
                       child: Center(child: searchAimation() ))
