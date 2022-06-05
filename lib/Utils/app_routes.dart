@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppRoutes {
   static void push(context, Widget page) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => page));
-    // Navigator.of(context).push(
-    //   MaterialPageRoute(
-    //     builder: (context) => page,
-    //   ),
-    // );
+    // Navigator.of(context).push(context, MaterialPageRoute(builder: (context) => page));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => page,
+      ),
+    );
   }
 
   static void pop(context) {

@@ -18,6 +18,7 @@ class HomeProvider extends ChangeNotifier {
   Future fetchAllCounty(BuildContext context) async {
     setLoading(true);
     try {
+      log('AppApi.getAllCountry: ${AppApi.getAllCountry}');
       final response = await http.get(
         Uri.parse(AppApi.getAllCountry),
         headers: {
@@ -48,6 +49,8 @@ class HomeProvider extends ChangeNotifier {
         }
         print('countries: $countries');
         setLoading(false);
+
+        return true;
       } else {
         setLoading(false);
         throw Exception('Unexpected error occurred!');
@@ -55,6 +58,7 @@ class HomeProvider extends ChangeNotifier {
     } catch (e) {
       log('e: $e');
       setLoading(false);
+      return false;
     }
   }
 }
